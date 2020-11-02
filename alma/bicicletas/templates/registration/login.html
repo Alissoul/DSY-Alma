@@ -3,15 +3,20 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class='row'>
-<div class='col-sm-6 col-sm-offset-3'>
+<center><div class='row'>
+    <div class="col s12 m4">
+        <div>
+
+          </div>
+    </div>
+ <div class="col s12 m4">
 <h2 class='text-align-center'><strong>Iniciar Sesión</strong></h2>
 <form method="post" action=".">
-  {% csrf_token %} 
+  {% csrf_token %}
   {{ form|crispy }}
 
   <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Iniciar sesion' %}" />
-  <input type="hidden" name="next" value="{{ next }}" />
+  <input type="hidden" name="next" value="{{ next }}" height="30%" />
 
 </form>
 </div>
@@ -25,4 +30,5 @@
 <p>{% trans "No tienes cuenta" %}? <a href="{% url 'registration_register' %}">{% trans "Registrarte" %}</a>!</p>
 </div>
 </div>
+</center>
 {% endblock %}
