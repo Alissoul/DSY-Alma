@@ -26,3 +26,16 @@ class usuario (models.Model):
 
     class Meta:
         ordering = ["rut"]
+
+class producto (models.Model):
+    id_producto         = models.AutoField(db_column='id_producto', primary_key=True)
+    nombre              = models.CharField(max_length=19, unique=True)
+    descripcion         = models.CharField(max_length=20, blank=True, null=True)
+    precio              = models.CharField(max_length=20, blank=True, null=True)
+    tipo                = models.CharField(max_length=20, blank=True, null=True)
+    foto                = models.ImageField(upload_to='fotos', blank=True, null=True)
+    activo              = models.IntegerField(blank=True, null=True)
+
+    def __str__(self):
+        return self.nombre+"," + self.descripcion +"," + self.precio + ","\
+               +self.foto.__str__()

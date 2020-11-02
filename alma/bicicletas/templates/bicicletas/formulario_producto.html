@@ -1,0 +1,73 @@
+{% extends "bicicletas/base.html" %}
+
+{%block title %} Agregar Producto {% endblock%}
+
+{% block content%}
+    <main>
+
+        <div class="container">
+            <div class="section">
+                <!--Formulario agregar producto-->
+                <h4 class="center">Agregar Producto</h4>
+                <br>
+                <div class="row">
+                    <form class="col s12" action="agregar_producto" method="POST" enctype="multipart/form-data" >
+                        {% csrf_token %}
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input placeholder="Oxfor" name="nombre" type="text" class="validate" required>
+                          <label>Nombre :</label>
+                        </div>
+                        <div class="input-field col s6">
+                          <input placeholder="Aro 26" name="descripcion" type="text" class="validate" required>
+                          <label>Descripción :</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input placeholder="7990" name="precio" type="number" class="validate" required>
+                          <label>precio :</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input placeholder="bicicleta/accesorio/pieza" name="tipo" type="text" class="validate" required>
+                          <label>Tipo :</label>
+                        </div>
+                      </div>
+                        <br>
+                        <tr><td><label>Foto     :</label>
+                        <td><input type="file" name="foto"><br>
+
+                      <div class="clearfix"></div><br>
+                        <button type="submit" class="btn waves-effect">
+                            <i class="material-icons right">check</i>
+                        Guardar
+                        </button>
+
+                    </form>
+                  </div>
+
+
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer black">
+
+        <div class="social">
+          <i class="fab fa-instagram"></i>
+        </div>
+
+        <div class="footer-copyright">
+          <div class="container center footer-text">
+           &copf; Bicicletas ALMA - 2020
+          </div>
+        </div>
+      </footer>
+
+{% endblock %}
+
+{% block javascript%}
+
+
+{% endblock %}

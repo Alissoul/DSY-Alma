@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import formulario
+from .models import usuario
+from .models import producto
 
 # Create your views here.
 
@@ -65,5 +67,46 @@ def formulario_agregar(request):
            return render(request, 'bicicletas/error/error_201.html', {})
     else:
         return render(request, 'bicicletas/error/error_203.html', {})
+
+def formulario_producto(request):
+    print("Hola estoy en formulario producto...")
+    context={}
+    return render (request,'bicicletas/formulario_producto.html', context)
+
+def guardado(request):
+    print("Hola estoy en guardado...")
+    context = {}
+    return render(request, 'bicicletas/guardado', context)
+
+def agregar_producto(request):
+    print("hola  estoy en agregar producto...")
+    if request.method == 'POST':
+       mi_nombre = request.POST['nombre']
+       mi_descripcion= request.POST['descripcion']
+       mi_precio=request.POST['precio']
+       mi_tipo=request.POST['tipo']
+       mi_foto = request.FILES['foto']
+
+       if mi_descripcion != "":
+           try:
+               prod = producto()
+
+               prod.nombre       = mi_nombre
+               prod.descripcion  = mi_descripcion
+               prod.precio       = mi_precio
+               prod.tipo         = mi_tipo
+               prod.foto         = mi_foto
+
+               prod.save()
+
+               return render(request, 'bicicletas/guardado.html',{})
+
+           except prod.DoesNotExist:
+               return render(request, 'bicicletas/error/error_204.html', {})
+       else:
+           return render(request, 'bicicletas/error/error_201.html', {})
+    else:
+        return render(request, 'bicicletas/error/error_203.html', {})
+
 
 
