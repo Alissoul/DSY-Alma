@@ -1,10 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "bicicletas/base.html" %}
+{% load static %}
+
+{%block title %} Accesorios {% endblock%}
+
+{% block content%}
+
+
+{% endblock %}
+
+{% block javascript%}
+   <main>
+
+        <div class="container">
+            <div class="section">
+
+              <!--Listado de Accesorios-->
+              <div class="row">
+                <div class="col s12 m4">
+                  <div>
+                    <img class="materialboxed center" src="{% static 'img/a1.jpg' %}" width="200" height="200" alt="ac1">
+                    <p class="center">$15.990</p>
+                    <p class="center">Casco Azul</p>
+                  </div>
+                </div>
+                <div class="col s12 m4">
+                  <div>
+                    <img class="materialboxed center" src="{% static 'img/a2.jpg' %}" width="200" height="200" alt="ac2">
+                    <p class="center">$10.990</p>
+                    <p class="center">Guantes Rojos</p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                  <div>
+                    <img class="materialboxed center" src="{% static 'img/a3.jpg' %}" width="200" height="200" alt="ac3">
+                    <p class="center">$5.990</p>
+                    <p class="center">Set Luces</p>
+                    </div>
+                </div>
+                <div class="col s13 m4">
+                  <div>
+                    <img class="materialboxed center" src="{% static 'img/a4.jpg' %}" width="200" height="200" alt="ac4">
+                    <p class="center">$35.990</p>
+                    <p class="center">Polera Ciclismo</p>
+                    </div>
+                </div>
+                <div class="col s13 m4">
+                  <div>
+                    <img class="materialboxed center" src="{% static 'img/a5.jpg' %}" width="200" height="200" alt="ac5">
+                    <p class="center">$23.990</p>
+                    <p class="center">Calza Ciclismo</p>
+                    </div>
+                </div>
+                <div class="col s13 m4">
+                  <div>
+                    <img class="materialboxed center" src="{% static 'img/a6.jpg' %}" width="200" height="200" alt="ac6">
+                    <p class="center">$69.990</p>
+                    <p class="center">Zapatillas Ciclismo</p>
+                    </div>
+                </div>
+
+
+              </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer black">
+
+        <div class="social">
+          <i class="fab fa-instagram"></i>
+        </div>
+
+        <div class="footer-copyright">
+          <div class="container center footer-text">
+           &copf; Bicicletas ALMA - 2020
+          </div>
+        </div>
+      </footer>
+
+
+{% endblock %}

@@ -1,10 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "bicicletas/base.html" %}
+{% load static%}
+
+{%block title %} Bicicletas {% endblock%}
+
+{% block content%}
+    <div class="container">
+            <div class="section">
+
+                <!--   Carousel destacados   -->
+                <div class="carousel">
+                    <h5 class="center">Destacados</h5>
+                        <a class="carousel-item"><img src="{% static 'img/b1.jpg' %}" alt="bici1"><p class="center black-text">Bicicleta OZARK Montaña</p></a>
+                        <a class="carousel-item"><img src="{% static 'img/b2.jpg' %}" alt="bici2"><p class="center black-text">Bicicleta OXFORD Montaña</p></a>
+                        <a class="carousel-item"><img src="{% static 'img/b3.jpg' %}" alt="bici3"><p class="center black-text">Bicicleta niño OZARK</p></a>
+                        <a class="carousel-item"><img src="{% static 'img/b4.jpg' %}" alt="bici4"><p class="center black-text">Bicicleta dama SCOTT Montaña</p></a>
+                        <a class="carousel-item"><img src="{% static 'img/b5.jpg' %}" alt="bici5"><p class="center black-text">Bicicleta GAMA paseo</p></a>
+                    </div>
+
+                <!--Listado de bicicletas-->
+                <div class="row">
+                  <div class="col s12 m4">
+                    <div>
+                      <img class="materialboxed center" src="{% static 'img/b1.jpg' %}" width="200" height="200" alt="Bici1">
+                      <p class="Rebaja center">Oferta: $399.990</p>
+                      <p class="Antes center">Antes: $439.000</p>
+                      <p class="center">MTB Oxford</p>
+                    </div>
+                  </div>
+                  <div class="col s12 m4">
+                    <div>
+                      <img class="materialboxed center" src="{% static 'img/b2.jpg' %}" width="200" height="200" alt="Bici2">
+                      <p class="Rebaja center">Oferta: $99.990</p>
+                      <p class="Antes center">Antes: $139.000</p>
+                      <p class="center">Rigida Ozark Trail</p>
+                      </div>
+                  </div>
+                  <div class="col s12 m4">
+                    <div>
+                      <img class="materialboxed center" src="{% static 'img/b3.jpg' %}" width="200" height="200" alt="Bici3">
+                      <p class="Rebaja center">Oferta: $89.990</p>
+                      <p class="Antes  center">Antes: $160.000</p>
+                      <p class="center">Niño Ozark Trail</p>
+                      </div>
+                  </div>
+                  <div class="col s13 m4">
+                    <div>
+                      <img class="materialboxed center" src="{% static 'img/b4.jpg' %}" width="200" height="200" alt="Bici4">
+                      <p class="center">Precio: $899.990</p>
+                      <p class="center">MTB DH Scott</p>
+                      </div>
+                  </div>
+                  <div class="col s13 m4">
+                    <div>
+                      <img class="materialboxed center" src="{% static 'img/b5.jpg' %}" width="200" height="200" alt="Bici5">
+                      <p class="Rebaja center">Oferta: $99.990</p>
+                      <p class="Antes center">Antes: $139.000</p>
+                      <p class="center">Paseo Gama</p>
+                      </div>
+                  </div>
+                  <div class="col s13 m4">
+                    <div>
+                      <img class="materialboxed center" src="{% static 'img/b6.jpg' %}" width="200" height="200" alt="Bici6">
+                      <p class="center">Precio: $159.990</p>
+                      <p class="center">Niña Royalbaby</p>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+        </div>
+    </main>
+    <footer class="page-footer black">
+
+        <div class="social">
+          <i class="fab fa-instagram"></i>
+        </div>
+
+        <div class="footer-copyright">
+          <div class="container center footer-text">
+           &copf; Bicicletas ALMA - 2020
+          </div>
+        </div>
+      </footer>
+
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}

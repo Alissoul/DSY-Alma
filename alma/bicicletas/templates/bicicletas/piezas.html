@@ -1,10 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "bicicletas/base.html" %}
+{% load static %}
+
+{%block title %} Piezas {% endblock%}
+
+{% block content%}
+    <main>
+
+        <div class="container">
+            <div class="section">
+
+              <!--Listado de Piezas-->
+              <div class="row">
+                <div class="col s12 m4">
+                  <div>
+                    <img class="materialboxed center" src="{% static 'img/p1.jpg' %}" width="200" height="200" alt="Pieza1">
+                    <p class="center">$9.990</p>
+                    <p class="center">Motor Sellado generico</p>
+                  </div>
+                </div>
+                <div class="col s12 m4">
+                  <div>
+                    <img class="materialboxed center" src="{% static 'img/p2.jpg' %}" width="200" height="200" alt="Pieza2">
+                    <p class="center">Precio: $5.990</p>
+                    <p class="center">Volante Shimano</p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                  <div>
+                    <img class="materialboxed center" src="{% static 'img/p3.jpg' %}" width="200" height="200" alt="Pieza3">
+                    <p class="center">Precio: $30.000</p>
+                    <p class="center">Set de ruedas Completas</p>
+                    </div>
+                </div>
+                <div class="col s13 m4">
+                  <div>
+                    <img class="materialboxed center" src="{% static 'img/p4.jpg' %}" width="200" height="200" alt="Pieza4">
+                    <p class="center">Precio: $57.990</p>
+                    <p class="center"> Marco VENZO</p>
+                    </div>
+                </div>
+                <div class="col s13 m4">
+                  <div>
+                    <img class="materialboxed center" src="{% static 'img/p5.jpg' %}" width="200" height="200" alt="Pieza5">
+                    <p class="center">Precio: 17.990</p>
+                    <p class="center">Frenos K-FORCE</p>
+                    </div>
+                </div>
+                <div class="col s13 m4">
+                  <div>
+                    <img class="materialboxed center" src="{% static 'img/p6.jpg' %}" width="200" height="200" alt="Pieza6">
+                    <p class="center">Precio: 12.990</p>
+                    <p class="center">Sillín WHEEL UP</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer black">
+
+        <div class="social">
+          <i class="fab fa-instagram"></i>
+        </div>
+
+        <div class="footer-copyright">
+          <div class="container center footer-text">
+           &copf; Bicicletas ALMA - 2020
+          </div>
+        </div>
+      </footer>
+
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}

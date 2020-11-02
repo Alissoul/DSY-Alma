@@ -1,92 +1,94 @@
 {% extends "bicicletas/base.html" %}
+{% load static%}
 
 {%block title %} Principal {% endblock%}
 
 {% block content%}
+    <section class="slider">
+                <ul class="slides">
+                  <li>
+                    <img src="{% static 'img/portada2.jpg' %}" alt="img1">
+                    <div class="caption center-align">
+                      <h1 class="black">Bicicletas</h1>
+                      <h5 class="black">Encuentra aqui tu bicicleta, de ruta, montaña o paseo</h5>
+                      <a href="bicicletas" class="btn btn-large white black-text waves-effect waves-grey">Ver</a>
+                    </div>
+                  </li>
 
+                  <li>
+                    <img src="{% static 'img/portada1.jpg' %}" alt="img2">
+                    <div class="caption right-align">
+                      <h3 class="black">Piezas</h3>
+                      <h5 class="black">Respuestos y partes de bicicletas</h5>
+                      <a href="piezas" class="btn btn-large white black-text waves-effect waves-grey">Ver</a>
+                    </div>
+                  </li>
+
+                  <li>
+                    <img src="{% static 'img/bicicleta1.jpg' %}" alt="img3">
+                    <div class="caption left-align">
+                      <h3 class="black" >Accesorios</h3>
+                      <h5 class="black">Vestuario, bolsos y accesorios de seguridad</h5>
+                      <a href="accesorios" class="btn btn-large white black-text waves-effect waves-grey">Ver</a>
+                    </div>
+                  </li>
+
+                </ul>
+              </section>
+
+        <main>
+
+            <div class="container">
+                <div class="section">
+
+                    <!--   Carousel destacados   -->
+                    <div class="carousel">
+                        <h5 class="center">Destacados</h5>
+                        <a class="carousel-item"><img src="{% static 'img/b1.jpg' %}" alt="bici1"><p class="center black-text">Bicicleta OZARK Montaña</p></a>
+                        <a class="carousel-item"><img src="{% static 'img/b2.jpg' %}" alt="bici2"><p class="center black-text">Bicicleta OXFORD Montaña</p></a>
+                        <a class="carousel-item"><img src="{% static 'img/b3.jpg' %}" alt="bici3"><p class="center black-text">Bicicleta niño OZARK</p></a>
+                        <a class="carousel-item"><img src="{% static 'img/b4.jpg' %}" alt="bici4"><p class="center black-text">Bicicleta dama SCOTT Montaña</p></a>
+                        <a class="carousel-item"><img src="{% static 'img/b5.jpg' %}" alt="bici5"><p class="center black-text">Bicicleta GAMA paseo</p></a>
+                    </div>
+
+
+                <!-- Sección de información  -->
+                    <div class="row">
+                      <ul class="collapsible">
+                        <li>
+                          <div class="collapsible-header center">¿Quienes Somos?</div>
+                          <div class="collapsible-body"><span class="center">Bicicletas ALMA nace de la unión entre dos personas, que hicieron conexión por su amor y pasión por las bicicletas.
+                            El nombre de esta empresa se compone de las dos primeras letras de el nombre de la dueña y de las dos primeras letras de el nombre del dueño.
+                            Tenemos productos realmente de calidad y satisfacemos las necesidades de nuestros clientes.</span></div>
+                        </li>
+                        <li>
+                          <div class="collapsible-header center">¿Dónde Encontrarnos?</div>
+                          <div class="collapsible-body"><span class="center">Para encontrarnos es muy fácil, solo debes dirigirte a calle Freire #862, San Bernardo
+                            <img class="materialboxed center" src="{% static 'img/mapa.png' %}" width="350" height="200" alt="mapa"></span></div>
+                        </li>
+
+                      </ul>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="page-footer black">
+
+            <div class="social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <div class="footer-copyright">
+              <div class="container center footer-text">
+               &copf; Bicicletas ALMA - 2020
+              </div>
+            </div>
+          </footer>
 
 {% endblock %}
 
 {% block javascript%}
-<section class="slider">
-            <ul class="slides">
-              <li>
-                <img src="media/fotos/portada2.jpg" alt="img1">
-                <div class="caption center-align">
-                  <h1 class="black">Bicicletas</h1>
-                  <h5 class="black">Encuentra aqui tu bicicleta, de ruta, montaña o paseo</h5>
-                  <a href="Bicicletas.html" class="btn btn-large white black-text waves-effect waves-grey">Ver</a>
-                </div>
-              </li>
-
-              <li>
-                <img src="img/portada1.jpg" alt="img2">
-                <div class="caption right-align">
-                  <h3 class="black">Piezas</h3>
-                  <h5 class="black">Respuestos y partes de bicicletas</h5>
-                  <a href="Piezas.html" class="btn btn-large white black-text waves-effect waves-grey">Ver</a>
-                </div>
-              </li>
-
-              <li>
-                <img src="img/bicicleta1.jpg" alt="img3">
-                <div class="caption left-align">
-                  <h3 class="black" >Accesorios</h3>
-                  <h5 class="black">Vestuario, bolsos y accesorios de seguridad</h5>
-                  <a href="Accesorios.html" class="btn btn-large white black-text waves-effect waves-grey">Ver</a>
-                </div>
-              </li>
-
-            </ul>
-          </section>
-
-    <main>
-
-        <div class="container">
-            <div class="section">
-
-                <!--   Carousel destacados   -->
-                <div class="carousel">
-                    <h5 class="center">Destacados</h5>
-                    <a class="carousel-item"><img src="img/b1.jpg" alt="bici1"><p class="center black-text">Bicicleta OZARK Montaña</p></a>
-                    <a class="carousel-item"><img src="img/b2.jpg" alt="bici2"><p class="center black-text">Bicicleta OXFORD Montaña</p></a>
-                    <a class="carousel-item"><img src="img/b3.jpg" alt="bici3"><p class="center black-text">Bicicleta niño OZARK</p></a>
-                    <a class="carousel-item"><img src="img/b4.jpg" alt="bici4"><p class="center black-text">Bicicleta dama SCOTT Montaña</p></a>
-                    <a class="carousel-item"><img src="img/b5.jpg" alt="bici5"><p class="center black-text">Bicicleta GAMA paseo</p></a>
-                </div>
 
 
-            <!-- Sección de información  -->
-                <div class="row">
-                  <ul class="collapsible">
-                    <li>
-                      <div class="collapsible-header center">¿Quienes Somos?</div>
-                      <div class="collapsible-body"><span class="center">Bicicletas ALMA nace de la unión entre dos personas, que hicieron conexión por su amor y pasión por las bicicletas.
-                        El nombre de esta empresa se compone de las dos primeras letras de el nombre de la dueña y de las dos primeras letras de el nombre del dueño.
-                        Tenemos productos realmente de calidad y satisfacemos las necesidades de nuestros clientes.</span></div>
-                    </li>
-                    <li>
-                      <div class="collapsible-header center">¿Dónde Encontrarnos?</div>
-                      <div class="collapsible-body"><span class="center">Para encontrarnos es muy fácil, solo debes dirigirte a calle Freire #862, San Bernardo
-                        <img class="materialboxed center" src="img/mapa.png" width="350" height="200" alt="mapa"></span></div>
-                    </li>
-
-                  </ul>
-
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer class="page-footer black">
-
-        <div class="social">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-
-        <div class="footer-copyright">
-          <div class="container center footer-text">
-           &copf; Bicicletas ALMA - 2020
-          </div>
-        </div>
-      </footer>
 {% endblock %}

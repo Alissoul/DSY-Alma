@@ -1,10 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "bicicletas/base.html" %}
+
+{%block title %} Contacto {% endblock%}
+
+{% block content%}
+    <main>
+
+        <div class="container">
+            <div class="section">
+                <!--Formulario-->
+                <h4 class="center">Formulario de Contacto</h4>
+                <br>
+                <div class="row">
+                    <form class="col s12" action="formulario_agregar" method="POST" enctype="multipart/form-data" >>
+                        {% csrf_token %}
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input placeholder="Newt" name="nombres" type="text" class="validate" required>
+                          <label>Nombres :</label>
+                        </div>
+                        <div class="input-field col s6">
+                          <input placeholder="Scamander" name="apellidos" type="text" class="validate" required>
+                          <label>Apellidos :</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input placeholder="newtScam@gmail.com" name="email" type="email" class="validate" required>
+                          <label>Email :</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input placeholder="957640750" name="telefono" type="number" class="validate" required>
+                          <label>Teléfono :</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input placeholder="Los Paltos 1989" name="direccion" type="text" class="validate">
+                         <label>Dirección :</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input placeholder="Escriba aquí" name="comentario" type="text" class="validate" required>
+                          <label>Comentario :</label>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                        <button type="submit" class="btn waves-effect">
+                            <i class="material-icons right">check</i>
+                        Enviar
+                        </button>
+
+                    </form>
+                  </div>
+
+
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer black">
+
+        <div class="social">
+          <i class="fab fa-instagram"></i>
+        </div>
+
+        <div class="footer-copyright">
+          <div class="container center footer-text">
+           &copf; Bicicletas ALMA - 2020
+          </div>
+        </div>
+      </footer>
+
+{% endblock %}
+
+{% block javascript%}
+
+
+{% endblock %}

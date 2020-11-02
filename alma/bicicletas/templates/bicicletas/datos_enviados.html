@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "bicicletas/base.html" %}
+{% load static %}
+
+{%block title %} Datos enviados {% endblock%}
+
+{% block content%}
+    <main>
+
+        <div class="container">
+            <div class="section">
+                <h4 class="center">Comentario enviado correctamente</h4>
+                <br>
+                <button type="submit" class="btn waves-effect, center" >
+                    <i class="material-icons right">check</i>
+                    <a href="index">Volver</a>
+                </button>
+            </div>
+
+
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}
