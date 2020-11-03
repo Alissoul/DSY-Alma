@@ -1,9 +1,11 @@
 {% extends "bicicletas/base.html" %}
 {% load static %}
-{%block title %} Editar Producto {% endblock%}
+{%block title %} Edliminar Producto {% endblock%}
 
 {% block content%}
-<br>
+<center>
+<h3>Eliminar productos por codigo</h3>
+    <br><br>
 <main>
     <div class='row'>
         <div class="col s12 m4">
@@ -12,16 +14,16 @@
             </div>
         </div>
         <div class="col s12 m4">
-            <form action="buscar_para_editar" method="POST">
+            <form action="eliminar_por_codigo" method="POST">
                 {% csrf_token %}
-                <div class="col s12 m10">
-                    <label class='text-align-center'><h5>Ingrese código para editar:  </h5></label>
-                    <input type="number" name="codigo">
-                    <input type="submit" name="opcion" value="Editar">
-                </div>
+                <label>Ingrese codigo a eliminar:  </label>
+                <input type="number" name="codigo">
+                <input type="submit" name="opcion" value="Eliminar">
             </form>
         </div>
-</main>
+
+    </div>
+</main></center>
 
     <footer class="page-footer black">
 

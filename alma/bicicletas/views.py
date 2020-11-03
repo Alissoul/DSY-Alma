@@ -189,3 +189,33 @@ def mostrar_producto(request):
     return render (request, 'bicicletas/listar_producto.html', context)
     return render (request, 'bicicletas/listar_producto.html', context)
 
+def eliminar(request):
+    print("ok, estamos en la vista eliminar")
+    context={}
+    return render(request, 'bicicletas/eliminar.html', context)
+
+def eliminar_por_codigo(request):
+
+    print("ok, estamos en la vista eliminar por codigo")
+    if request.method =='POST':
+        mi_codigo=request.POST['codigo']
+
+        if mi_codigo!="":
+            try:
+                prod = producto()
+                prod = producto.objects.get(codigo=mi_codigo)
+                if prod is not None:
+                    print("producto= ", prod)
+                    prod.delete()
+                    context={}
+
+                    return render (request,'bicicletas/index.html',context)
+                else:
+                    return render(request,'bicicletas/error/error_202.html',{})
+            except prod.DoesNotExist:
+                return render(request,'bicicletas/error/error_202.html',{})
+        else:
+            return render (request,'bicicletas/error/error_201.html',{})
+    else:
+        return render(request, 'bicicletas/error/error_203.html',{})
+
