@@ -1,0 +1,86 @@
+{% extends "bicicletas/base.html" %}
+{% load static %}
+
+{%block title %} Editar Producto {% endblock%}
+
+{% block content%}
+    <main>
+
+        <div class="container">
+            <div class="section">
+                <!--Formulario agregar producto-->
+                <h4 class="center">Modificar Producto</h4>
+                <br>
+                <div class="row">
+                    <form class="col s12" action="actualizar_producto" method="POST" enctype="multipart/form-data" >
+                        {% csrf_token %}
+                        <input type="hidden" name="id_producto" value="{{prod.id_producto}}">
+                        <div class="row">
+                            <div class="input-field col s12">
+                               <input name="codigo" type="number" value="{{prod.codigo}}">
+                              <label>Código :</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input name="nombre" type="text" value="{{prod.nombre}}">
+                                <label>Nombre :</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input name="descripcion" type="text" value="{{prod.descripcion}}" >
+                              <label>Descripción :</label>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <input name="precio" type="number" value="{{prod.precio}}">
+                              <label>precio :</label>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <input name="tipo" type="text" value="{{prod.tipo}}">
+                              <label>Tipo :</label>
+                            </div>
+                          </div>
+                            <br>
+                            <tr><td><label>Foto :</label>
+                            <td><input type="file" name="foto"><br>
+
+                            {% if prod.foto %}
+                              <tr><td><p>{{prod.foto.url }}</p></td></tr>
+                              <tr><td><p><img src="{{prod.foto.url}}"></p></td></tr>
+                            {% endif %}
+
+                          <div class="clearfix"></div><br>
+                            <button type="submit" class="btn waves-effect">
+                                <i class="material-icons right">check</i>
+                            Actualizar
+                            </button>
+
+                        </form>
+                      </div>
+
+
+                </div>
+            </div>
+        </main>
+        <footer class="page-footer black">
+
+            <div class="social">
+              <i class="fab fa-instagram"></i>
+            </div>
+
+            <div class="footer-copyright">
+              <div class="container center footer-text">
+               &copf; Bicicletas ALMA - 2020
+              </div>
+            </div>
+          </footer>
+
+{% endblock %}
+
+{% block javascript%}
+
+
+{% endblock %}

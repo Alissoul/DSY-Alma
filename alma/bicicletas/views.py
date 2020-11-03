@@ -68,6 +68,7 @@ def formulario_agregar(request):
     else:
         return render(request, 'bicicletas/error/error_203.html', {})
 
+
 def formulario_producto(request):
     print("Hola estoy en formulario producto...")
     context={}
@@ -78,19 +79,24 @@ def guardado(request):
     context = {}
     return render(request, 'bicicletas/guardado', context)
 
+#Productos
+
 def agregar_producto(request):
-    print("hola  estoy en agregar producto...")
+    print("Estoy en agregar producto...")
     if request.method == 'POST':
+
+       mi_codigo = request.POST['codigo']
        mi_nombre = request.POST['nombre']
        mi_descripcion= request.POST['descripcion']
        mi_precio=request.POST['precio']
        mi_tipo=request.POST['tipo']
        mi_foto = request.FILES['foto']
 
-       if mi_descripcion != "":
+       if mi_codigo != "":
            try:
                prod = producto()
 
+               prod.codigo       = mi_codigo
                prod.nombre       = mi_nombre
                prod.descripcion  = mi_descripcion
                prod.precio       = mi_precio
@@ -108,5 +114,67 @@ def agregar_producto(request):
     else:
         return render(request, 'bicicletas/error/error_203.html', {})
 
+def editar_producto(request):
+    print("Hola estoy en actualizar producto...")
+    context={}
+    return render (request,'bicicletas/editar_producto.html', context)
+
+def buscar_para_editar(request):
+    print("Estamos en la vista buscar para editar")
+    if request.method =='POST':
+        mi_codigo= request.POST['codigo']
+
+        if mi_codigo !="":
+            try:
+                prod = producto()
+                prod = producto.objects.get(codigo=mi_codigo)
+                if prod is not None:
+                    print ("producto = ", prod)
+                    context={'prod':prod}
+                    return render(request,'bicicletas/formulario_editar.html',context)
+                else:
+                    return render(request,'bicicletas/error_202.html',{})
+            except prod.DoesNotExist:
+                return render(request,'bicicletas/error/error_202.html',{})
+        else:
+            return render(request,'bicicletas/error/error_201.html', {})
+    else:
+        return render(request, 'personas/error/error_203.html',{})
+
+
+def actualizar_producto(request):
+    print("Estoy en actualizar productos...")
+    if request.method == 'POST':
+        mi_id     = request.POST['id_producto']
+        mi_codigo = request.POST['codigo']
+        mi_nombre = request.POST['nombre']
+        mi_descripcion= request.POST['descripcion']
+        mi_precio=request.POST['precio']
+        mi_tipo=request.POST['tipo']
+        mi_foto = request.FILES['foto']
+
+        if mi_codigo != "":
+            try:
+                prod = producto()
+
+                prod.id_producto = mi_id
+                prod.codigo = mi_codigo
+                prod.nombre = mi_nombre
+                prod.descripcion = mi_descripcion
+                prod.precio = mi_precio
+                prod.tipo = mi_tipo
+                prod.foto = mi_foto
+                prod.activo = 1
+
+                prod.save()
+
+                return render(request, 'bicicletas/guardado.html', {})
+
+            except prod.DoesNotExist:
+                return render(request, 'bicicletas/error/error_204.html', {})
+        else:
+            return render(request, 'bicicletas/error/error_201.html', {})
+    else:
+        return render(request, 'bicicletas/error/error_203.html', {})
 
 

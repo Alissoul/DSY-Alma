@@ -29,6 +29,7 @@ class usuario (models.Model):
 
 class producto (models.Model):
     id_producto         = models.AutoField(db_column='id_producto', primary_key=True)
+    codigo              = models.CharField(max_length=5, unique=True)
     nombre              = models.CharField(max_length=19, unique=True)
     descripcion         = models.CharField(max_length=20, blank=True, null=True)
     precio              = models.CharField(max_length=20, blank=True, null=True)
