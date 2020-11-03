@@ -177,4 +177,15 @@ def actualizar_producto(request):
     else:
         return render(request, 'bicicletas/error/error_203.html', {})
 
+def listar(request):
+    print("ok, estamos en la vista listar")
+    context={}
+    return render(request, 'bicicletas/listar.html', context)
+
+def mostrar_producto(request):
+    print("ok, estamos en la vista mostrar producto")
+    lista = producto.objects.all()
+    context = {'listado':lista}
+    return render (request, 'bicicletas/listar_producto.html', context)
+    return render (request, 'bicicletas/listar_producto.html', context)
 

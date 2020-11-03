@@ -1,0 +1,45 @@
+{% extends "bicicletas/base.html" %}
+{% load static %}
+{%block title %} Editar Producto {% endblock%}
+
+{% block content%}
+<br>
+<div class='row'>
+    <div class="col s12 m4">
+        <div>
+
+        </div>
+    </div>
+    <div class="col s12 m4">
+        <h1>Botón Listar</h1>
+        <br><br>
+
+    <form action="mostrar_producto" method="POST">
+        {% csrf_token %}
+        <label>Pinche este botón para listar los productos: </label>
+        <input type="submit" name="opcion" value="Listar">
+
+    </form>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <footer class="page-footer black">
+
+        <div class="social">
+          <i class="fab fa-instagram"></i>
+        </div>
+
+        <div class="footer-copyright">
+          <div class="container center footer-text">
+           &copf; Bicicletas ALMA - 2020
+          </div>
+        </div>
+      </footer>
+
+
+{% endblock %}
+
+{% block javascript%}
+
+
+{% endblock %}

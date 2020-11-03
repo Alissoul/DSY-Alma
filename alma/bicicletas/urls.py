@@ -16,5 +16,7 @@ urlpatterns = [
     path('buscar_para_editar', views.buscar_para_editar, name='buscar_para_editar'),
     path('actualizar_producto', views.actualizar_producto, name='actualizar_producto'),
     path('editar_producto', views.editar_producto, name='editar_producto'),
+    path('listar', views.listar, name='listar'),
+    path('mostrar_producto', views.mostrar_producto, name='mostrar_producto'),
 
 ]
