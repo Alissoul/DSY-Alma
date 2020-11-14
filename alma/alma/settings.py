@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'materializecssform',
     'registration',
     'crispy_forms',
+    'rest_framework',
 
 
 ]
@@ -156,3 +157,9 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/bicicletas/index'  # The page you want users to arrive at after they successful log in
 LOGIN_URL = '/accounts/login/'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
