@@ -38,6 +38,7 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.default.urls')),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('oauth/', include('social_django.urls', namespace='social'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()

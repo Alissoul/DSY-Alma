@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'registration',
     'crispy_forms',
     'rest_framework',
+    'social_django',
 
 
 ]
@@ -57,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'alma.urls'
@@ -72,6 +74,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
+
             ],
         },
     },
@@ -163,3 +168,16 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+
+SOCIAL_AUTH_FACEBOOK_KEY = '361777551555776'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'b8215094feb75c1d234691d81c613e45'
+
+AUTHENTICATION_BACKENDS = (
+'social_core.backends.facebook.FacebookOAuth2',
+'django.contrib.auth.backends.ModelBackend',
+)
+
+
+
+
+#https://www.youtube.com/watch?v=YODgZtuwaMA (video de vinculación red social)
