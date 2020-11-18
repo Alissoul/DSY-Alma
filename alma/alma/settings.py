@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'rest_framework',
     'social_django',
+    'pwa',
 
 
 ]
@@ -177,7 +178,4 @@ AUTHENTICATION_BACKENDS = (
 'django.contrib.auth.backends.ModelBackend',
 )
 
-
-
-
-#https://www.youtube.com/watch?v=YODgZtuwaMA (video de vinculación red social)
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'serviceworker.js')

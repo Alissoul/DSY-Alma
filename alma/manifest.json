@@ -1,0 +1,9 @@
+{
+  "name": "BicicletasAlma",
+  "short_name": "Alma",
+  "theme_color": "#000000",
+  "background_color": "#119944",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "/bicicletas/index"
+}
