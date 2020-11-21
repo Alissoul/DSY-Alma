@@ -1,9 +1,15 @@
 {
-  "name": "BicicletasAlma",
+  "name": "Alma",
   "short_name": "Alma",
-  "theme_color": "#000000",
-  "background_color": "#119944",
-  "display": "browser",
+  "description": "Alma PWA",
+  "start_url": "/bicicletas/index.html",
+  "display": "standalone",
   "scope": "/",
-  "start_url": "/bicicletas/index"
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "status_bar": "default",
+  "icons": [{"src": "static/img/ic1.png", "sizes": "256x256"}],
+  "dir": "ltr",
+  "lang": "en-US"
 }

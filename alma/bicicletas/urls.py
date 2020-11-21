@@ -20,5 +20,4 @@ urlpatterns = [
     path('mostrar_producto', views.mostrar_producto, name='mostrar_producto'),
     path('eliminar', views.eliminar, name='eliminar'),
     path('eliminar_por_codigo', views.eliminar_por_codigo, name='eliminar_por_codigo'),
-
 ]
