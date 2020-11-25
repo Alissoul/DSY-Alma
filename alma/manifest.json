@@ -2,7 +2,7 @@
   "name": "Alma",
   "short_name": "Alma",
   "description": "Alma PWA",
-  "start_url": "/bicicletas/index.html",
+  "start_url": "http://localhost:8000/accounts/login/",
   "display": "standalone",
   "scope": "/",
   "orientation": "any",
